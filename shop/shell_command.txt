@@ -1,0 +1,22 @@
+*** Fetching Products Using Python manage.py shell ***
+
+PS D:\Django_Projects\One-Click Pick\ocp> python .\manage.py shell
+Python 3.8.1 (tags/v3.8.1:1b293b6, Dec 18 2019, 23:11:46) [MSC v.1916 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from shop.models import Product
+>>> Product.objects.all()
+<QuerySet [<Product: Watch>]>
+>>> from django.utils import timezone
+>>> myprod = Product(product_name="mouse", category="computer", subcategory="device", price=300, description="chutiya", pub_date=timezone.now())
+>>> myprod.save()
+>>> Product.objects.all()
+<QuerySet [<Product: Watch>, <Product: mouse>]>
+>>> Product.objects.all().first()
+<Product: Watch>
+>>> Product.objects.get(product_name="mouse")  # When We Need Only Product Name Like mouse.
+<Product: mouse>
+>>> a = Product.objects.get(product_name="mouse") # category Of mouse.
+>>> a.category
+'computer'
+>>>
