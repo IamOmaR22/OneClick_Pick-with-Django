@@ -11,8 +11,13 @@ def index(request):
     n = len(products)  # length of products
     nSlides = n//4 + ceil((n/4)-(n//4))   # Number of slides
 
+    # context = {'products':products, 'no_of_slides':nSlides, 'range':range(1, nSlides)}
+    all_products = [
+        [products, range(1, nSlides), nSlides],
+        [products, range(1, nSlides), nSlides]
+    ]
 
-    context = {'products':products, 'no_of_slides':nSlides, 'range':range(1, nSlides)}
+    context = {'all_products':all_products}
     return render(request, 'shop/index.html', context)
 
 def about(request):
