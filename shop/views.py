@@ -1,9 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from . models import Product
+from math import ceil
+
 # Create your views here.
 
 def index(request):
-    return render(request, 'shop/index.html')
+    products = Product.objects.all()
+
+    n = len(products)  # length of products
+    nSlides = n//4 + ceil((n/4)-(n//4))   # Number of slides
+
+
+    context = {'products':products, 'no_of_slides':nSlides, 'range':range(1, nSlides)}
+    return render(request, 'shop/index.html', context)
 
 def about(request):
     return render(request, 'shop/about.html')
