@@ -67,7 +67,7 @@
           <div class="card align-items-center" style="width: 18rem;">
             <img src='/media/{{i.image}}' class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">{{ i.product_name }}</h5>
+              <h5 class="card-title" id="namepr{{i.id}}">{{ i.product_name }}</h5>
               <p class="card-text">{{ i.description|slice:"0:60" }}....</p>
               <span id="divpr{{i.id}}" class="divpr">
                 <button id="pr{{ i.id }}" class="btn btn-success cart">Add To Cart</button>
@@ -126,7 +126,22 @@
   });
   //Add Popover to cart
   $('#popcart').popover();
-  document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+   
+  updatePopover(cart);
+  function updatePopover(cart){
+      var popStr = "";
+      popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
+      var i = 1;
+      for (var item in cart){
+          popStr = popStr + "<b>" + i + "</b>. ";
+          popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0,19) + "....Qty: " + cart[item] + '<br>';
+          i = i+1;
+      }
+      popStr = popStr + "</div>"
+      document.getElementById('popcart').setAttribute('data-content', popStr);
+      $('#popcart').popover('show');
+  }
+  
   function updateCart(cart) {
       for (var item in cart) {
           document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-success minus'>-</button> <span id='val" + item + "''>" + cart[item] + "</span> <button id='plus" + item + "' class='btn btn-success plus'> + </button>";
@@ -134,6 +149,7 @@
       localStorage.setItem('cart', JSON.stringify(cart));
       document.getElementById('cart').innerHTML = Object.keys(cart).length;
       console.log(cart);
+      updatePopover(cart);
   }
   // If plus or minus button is clicked, change the cart as well as the display value
   $('.divpr').on("click", "button.minus", function() {
