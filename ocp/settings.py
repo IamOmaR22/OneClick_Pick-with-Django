@@ -56,7 +56,7 @@ ROOT_URLCONF = 'ocp.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['ocp/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
