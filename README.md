@@ -7,3 +7,6 @@
 - Html
 - CSS
 - Bootstrap etc...
+
+## Integrating Payment Gateway - PayTM.
+### Create a Merchant account on PayTM to integrate.
