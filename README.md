@@ -8,5 +8,7 @@
 - CSS
 - Bootstrap etc...
 
-## Integrating Payment Gateway - PayTM.
+### Integrating Payment Gateway - PayTM.
 - Create a Merchant account on PayTM to integrate.
+- Don't share your MID.
+- And also don't share MERCHANT_KEY = ''
