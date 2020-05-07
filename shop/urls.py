@@ -9,4 +9,5 @@ urlpatterns = [
     path('search/', views.search, name='search'),
     path('products/<int:pid>/', views.productView, name='product-view'),  # after Click on a prooduct can see the details
     path('checkout/', views.checkout, name='checkout'),
+    path("handlerequest/", views.handlerequest, name="HandleRequest"),
 ]
