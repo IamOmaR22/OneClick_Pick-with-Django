@@ -40,11 +40,11 @@
         <div class="col-md-4">
     <div class="col-md-8">
         <div class="my-4">
-            <form action="/search" method='get'>
+            <form method='get' action={% url 'search' %}>
                 <h4>Search</h4>
                 <div>
-                    <input type="text" name='query' class="form-control">
-                    <button type='submit' class="btn btn-danger mt-2 ">Search
+                    <input type="text" name="search" id="search" class="form-control">
+                    <button type='submit' class="btn btn-primary mt-2 ">Search
                     </button>
                 </div>
             </form>
