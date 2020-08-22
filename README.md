@@ -1,15 +1,5 @@
-# OneClick_Pick Using Django
-### One-Click Pick is an E-commerce Webite and Also have a Blog.
-
-# Tools
-## Front-end Part
-* HTML
-* CSS
-* Bootstrap
-* JavaScript
-## Back-end
-* Django
-* SQLite 3
+# OneClick_Pick
+*One-Click Pick is an E-commerce Webite and Also have a Blog. A user can buy any product from this site. User must have logged in to buy product, can add products into cart without login. User can track their orders.*
 
 # Features
 * Create order
@@ -27,6 +17,16 @@
 - Create a Merchant account on PayTM to integrate.
 - Don't share your MID.
 - And also don't share MERCHANT_KEY = ''
+
+# Tools
+## Front-end Part
+* HTML
+* CSS
+* Bootstrap
+* JavaScript
+## Back-end
+* Django
+* SQLite 3
 
 # Screenshots of the Project
 <p align="center">
