@@ -1,6 +1,6 @@
 asgiref==3.2.7
 Django==3.1.12
-Pillow==8.2.0
+Pillow==8.3.2
 pycryptodome==3.9.7
 pycryptodomex==3.9.7
 pytz==2019.3
