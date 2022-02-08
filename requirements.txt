@@ -1,5 +1,5 @@
 asgiref==3.2.7
-Django==3.1.13
+Django==3.1.14
 Pillow==9.0.0
 pycryptodome==3.9.7
 pycryptodomex==3.9.7
